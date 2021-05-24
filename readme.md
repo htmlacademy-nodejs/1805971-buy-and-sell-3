@@ -1,7 +1,7 @@
 # Учебный проект «Куплю. Продам» [![Build status][travis-image]][travis-url]
 
 * Студент: [Антон Волков](https://up.htmlacademy.ru/nodejs/3/user/1805971).
-* Наставник: `Неизвестно`.
+* Наставник:[Ruslan Malogulko](https://htmlacademy.ru/profile/id9728).
 
 ---
 
