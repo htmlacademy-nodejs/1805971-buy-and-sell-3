@@ -1,10 +1,12 @@
 'use strict';
 
+const chalk = require(`chalk`);
+
 const textCommandHelp = `Программа запускает http-сервер и формирует файл с данными для API.
 
     Гайд:
     service.js <command>
-    
+
     Команды:
     --version:            выводит номер версии
     --help:               печатает этот текст
@@ -13,6 +15,6 @@ const textCommandHelp = `Программа запускает http-сервер
 module.exports = {
   name: `--help`,
   run() {
-    console.info(textCommandHelp);
+    console.info(chalk.gray(textCommandHelp));
   }
 };
