@@ -113,28 +113,27 @@ module.exports = {
 
           case 10:
             categories = _context2.sent;
-            console.log("titles", titles);
             countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
             content = JSON.stringify(generateOffers(countOffer, titles, categories, sentences));
-            _context2.prev = 14;
-            _context2.next = 17;
+            _context2.prev = 13;
+            _context2.next = 16;
             return regeneratorRuntime.awrap(fs.writeFile(FILE_NAME, content));
 
-          case 17:
+          case 16:
             console.log(chalk.green("Operation success. File created."));
-            _context2.next = 23;
+            _context2.next = 22;
             break;
 
-          case 20:
-            _context2.prev = 20;
-            _context2.t0 = _context2["catch"](14);
+          case 19:
+            _context2.prev = 19;
+            _context2.t0 = _context2["catch"](13);
             console.error(chalk.red("Can't write data to file..."));
 
-          case 23:
+          case 22:
           case "end":
             return _context2.stop();
         }
       }
-    }, null, null, [[14, 20]]);
+    }, null, null, [[13, 19]]);
   }
 };

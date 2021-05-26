@@ -1,7 +1,6 @@
 'use strict';
 
 const chalk = require(`chalk`);
-
 const fs = require(`fs`).promises;
 const path = require(`path`);
 
@@ -11,7 +10,7 @@ const {
   getPictureFileName
 } = require(`../../utils`);
 
-const { ExitCode } = require(`../../constants`);
+const {ExitCode} = require(`../../constants`);
 
 const DEFAULT_COUNT = 1;
 const FILE_NAME = `mocks.json`;
@@ -72,7 +71,6 @@ module.exports = {
     const titles = await readContent(FILE_TITLES_PATH);
     const categories = await readContent(FILE_CATEGORIES_PATH);
 
-    console.log("titles", titles)
     const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
     const content = JSON.stringify(generateOffers(countOffer, titles, categories, sentences));
 
