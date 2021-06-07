@@ -16,3 +16,6 @@ build/
 
 # Мок данные
 mock.js
+
+# VS code сборка default
+src/service/cli/dist
