@@ -55,11 +55,11 @@ module.exports = {
 
     http.createServer(onClientConnect)
       .listen(port)
-      .on(`listening`, (err) => {
+      .on(`listening`, () => {
         console.info(chalk.green(`Ожидаю соединений на ${port}`));
       })
       .on(`error`, ({message}) => {
         console.error(`Ошибка при создании сервера: ${message}`);
       });
   }
-}
+};
