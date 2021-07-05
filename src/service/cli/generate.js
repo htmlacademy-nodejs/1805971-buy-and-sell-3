@@ -4,7 +4,6 @@ const chalk = require(`chalk`);
 const fs = require(`fs`).promises;
 const path = require(`path`);
 
-const {ht} = require(`../../constants`)
 const {
   getRandomInt,
   shuffle,
