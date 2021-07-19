@@ -1,6 +1,6 @@
 'use strict';
 
-const DEFAULT_COMMAND = `--help`;
+const DEFAULT_COMMAND = `--server`;
 const USER_ARGV_INDEX = 2;
 
 const ExitCode = {
