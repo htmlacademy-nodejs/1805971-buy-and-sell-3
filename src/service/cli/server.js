@@ -2,8 +2,8 @@
 
 const express = require(`express`);
 
-const {HttpCode} = require(`../../constants`);
-const offersRoutes = require(`./routes/offers-routes`);
+const {HttpCode, API_PREFIX} = require(`../../constants`);
+const routes = require(`../api`);
 
 const DEFAULT_PORT = 3000;
 
@@ -16,12 +16,14 @@ module.exports = {
     const app = express();
     app.use(express.json());
 
-    app.use(`/offers`, offersRoutes);
+    app.use(API_PREFIX, routes);
 
     app.use((req, res) => res
       .status(HttpCode.NOT_FOUND)
       .send(`Not found`));
 
-    app.listen(port);
+    app.listen(port, ()=>{
+      console.info(`server start port ${port}`);
+    });
   }
 };
