@@ -6,17 +6,23 @@
   "dependencies": {
     "chalk": "4.1.1",
     "express": "4.17.1",
+    "nanoid": "3.1.23",
     "pug": "3.0.2"
   },
   "devDependencies": {
     "eslint": "7.26.0",
-    "eslint-config-htmlacademy": "0.6.0"
+    "eslint-config-htmlacademy": "0.6.0",
+    "jest": "27.0.6",
+    "supertest": "6.1.4"
   },
   "scripts": {
     "start": "node ./src/service/service.js --server 3001",
+    "generate": "node ./src/service/service.js --generate 10",
     "server": "nodemon ./src/service/service.js --server",
     "start-front-server": "nodemon ./src/express/index.js",
-    "test": "npm run eslint",
+    "test": "npm run eslint && npm run jest",
+    "jest": "jest",
+    "test:eslint": "npm run eslint",
     "eslint": "eslint --ext .js src/",
     "fix": "eslint src/ --ext .js --fix"
   },
