@@ -27,7 +27,7 @@ module.exports = (app, offerService, commentService) => {
       .json(offer);
   });
 
-  route.put(`/:offerId`, [offerExist(offerService), offerValidator], (req, res) => {
+  route.put(`/:offerId`, [offerValidator, offerExist(offerService)], (req, res) => {
     const {offerId} = req.params;
     const offer = offerService.update(offerId, req.body);
 

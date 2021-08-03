@@ -19,3 +19,5 @@ mock.js
 
 # VS code сборка default
 src/service/cli/dist
+
+*.log
