@@ -42,7 +42,6 @@ class OfferService {
 
     return Object.assign(oldOffer, offer);
   }
-
 }
 
 module.exports = OfferService;

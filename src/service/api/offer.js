@@ -8,7 +8,6 @@ const offerExist = require(`../middlewares/offer-exists`);
 const commentValidator = require(`../middlewares/comment-validator`);
 const commentExist = require(`../middlewares/comment-exist`);
 
-
 const route = new Router();
 
 module.exports = (app, offerService, commentService) => {
@@ -16,6 +15,7 @@ module.exports = (app, offerService, commentService) => {
 
   route.get(`/`, async (req, res) => {
     const offers = await offerService.findAll();
+
     res.status(HttpCode.OK)
       .json(offers);
   });
@@ -53,7 +53,7 @@ module.exports = (app, offerService, commentService) => {
     }
 
     return res.status(HttpCode.OK)
-        .json(offer);
+      .json(offer);
   });
 
   route.get(`/:offerId/comments`, offerExist(offerService), async (req, res) => {
@@ -61,25 +61,23 @@ module.exports = (app, offerService, commentService) => {
     const comment = await commentService.findAll(offerId);
 
     return res.status(HttpCode.OK)
-    .json(comment);
+      .json(comment);
   });
 
 
   route.post(`/:offerId/comments`, [offerExist(offerService), commentValidator], async (req, res) => {
     const {offerId} = req.params;
-
     const comment = await commentService.create(offerId, req.body);
 
     return res.status(HttpCode.CREATED)
-    .json(comment);
+      .json(comment);
   });
 
   route.delete(`/:offerId/comments/:commentId`, [offerExist(offerService), commentExist(commentService), commentValidator], async (req, res) => {
     const {offerId, commentId} = req.params;
-
     const comment = await commentService.drop(offerId, commentId);
 
     return res.status(HttpCode.OK)
-    .json(comment);
+      .json(comment);
   });
 };
