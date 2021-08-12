@@ -21,3 +21,5 @@ mock.js
 src/service/cli/dist
 
 *.log
+
+coverage
