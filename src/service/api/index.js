@@ -6,8 +6,6 @@ const search = require(`../api/search`);
 const comment = require(`../api/comment`);
 const offer = require(`../api/offer`);
 
-// const user = require(`../api/user`);
-
 const getMockData = require(`../lib/get-mock-data`);
 
 const {

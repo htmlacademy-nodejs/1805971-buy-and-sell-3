@@ -25,14 +25,15 @@ class CommentService {
 
   findOne(offerId, commentId) {
     const offer = this._offers.find((item) => item.id === offerId);
+
     return offer.comments.find((item) => item.id === commentId);
   }
 
   create(offerId, {text}) {
     const newComment = Object
       .assign({id: nanoid(MAX_ID_LENGTH), text});
-
     const offer = this._offers.find((item) => item.id === offerId);
+
     offer.comments.push(newComment);
 
     return newComment;

@@ -15,5 +15,5 @@ module.exports = (req, res, next) => {
       .send(`Bad request`);
   }
 
-  next();
+  return next();
 };
